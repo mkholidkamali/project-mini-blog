@@ -1,18 +1,18 @@
 <?php
 
+use App\Http\Controllers\PublicController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/**
+ * ROUTE
+ */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
+/**
+ * PUBLIC
+ */
+Route::controller(PublicController::class)->group(function() {
+    Route::get('/', 'index')->name('public.index');
+    Route::get('/post/1/show', 'show')->name('public.show');
 });
