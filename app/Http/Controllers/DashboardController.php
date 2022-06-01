@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class DashboardController extends Controller
 {
@@ -16,9 +18,11 @@ class DashboardController extends Controller
         return view('dashboard.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        
+        $data = $request->validate([
+
+        ]);
     }
 
     public function edit()
@@ -28,7 +32,10 @@ class DashboardController extends Controller
 
     public function update()
     {
-        
+        // Validasi
+        // Destroy Old Image
+        // Save Image
+        // Update Data
     }
 
     public function destroy()
