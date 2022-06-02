@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Crypt;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +23,21 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        User::create([
+            'name' => 'kholid',
+            'email' => 'testing@testing.com',
+            // 'password' => Crypt::encrypt("password")
+            'password' => bcrypt("password")
+        ]);
+
+        Category::create([
+            'name' => 'Laravel'
+        ]);
+        Category::create([
+            'name' => 'Bootstrap'
+        ]);
+        Category::create([
+            'name' => 'Git'
+        ]);
     }
 }

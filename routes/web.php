@@ -21,6 +21,8 @@ Route::controller(PublicController::class)->group(function() {
 Route::controller(DashboardController::class)->middleware('auth')->group(function() {
     Route::get('/dashboard', 'index')->name('dashboard.index');
     Route::get('/d/create', 'create')->name('dashboard.create');
-    Route::get('/d/1/edit', 'edit')->name('dashboard.edit');
-    Route::delete('/d/1/destroy', 'destroy')->name('dashboard.destroy');
+    Route::post('/d/store', 'store')->name('dashboard.store');
+    Route::get('/d/{post}/edit', 'edit')->name('dashboard.edit');
+    Route::patch('/d/{post}/update', 'update')->name('dashboard.update');
+    Route::delete('/d/{post}/destroy', 'destroy')->name('dashboard.destroy');
 });

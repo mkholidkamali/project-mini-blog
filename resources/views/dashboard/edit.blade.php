@@ -8,7 +8,7 @@
                 <h1>Update Post - Title</h1>
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+                <form action="{{ route('dashboard.update') }}" method="POST">
                     <div class="mb-3">
                         <label for="title">Title</label>
                         <input type="text" class="form-control" id="title" name="title">
@@ -28,7 +28,7 @@
                         <textarea name="description" id="description" cols="30" rows="4" class="form-control"></textarea>
                     </div>
                     <button class="btn btn-primary float-end">
-                        CREATE
+                        UPDATE
                     </button>
                 </form>
             </div>

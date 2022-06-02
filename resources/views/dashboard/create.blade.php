@@ -8,7 +8,8 @@
                 <h1>New Post</h1>
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+                <form action="{{ route('dashboard.store') }}" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label for="title">Title</label>
                         <input type="text" class="form-control" id="title" name="title">
