@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -38,6 +39,15 @@ class DatabaseSeeder extends Seeder
         ]);
         Category::create([
             'name' => 'Git'
+        ]);
+
+        Post::create([
+            'user_id' => 1,
+            'category_id' => 1,
+            'title' => 'title',
+            'slug' => 'title',
+            'image' => 'image',
+            'description' => 'description'
         ]);
     }
 }

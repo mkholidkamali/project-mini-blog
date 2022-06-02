@@ -15,7 +15,8 @@ Auth::routes();
  */
 Route::controller(PublicController::class)->group(function() {
     Route::get('/', 'index')->name('public.index');
-    Route::get('/post/1/show', 'show')->name('public.show');
+    Route::get('/post/{post}/show', 'show')->name('public.show');
+    Route::get('/p/category/{category}', 'categoryIndex')->name('public.category.show');
 });
 
 Route::controller(DashboardController::class)->middleware('auth')->group(function() {
