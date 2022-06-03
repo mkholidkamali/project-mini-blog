@@ -32,7 +32,7 @@ class DashboardController extends Controller
         $data = $this->validate($request, [
             "title" => ['required', 'max:30', 'unique:posts'],
             'category_id' => ['required'],
-            'image' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'image' => ['required', 'image', 'mimes:png,jpg,jpeg,webp'],
             'description' => ['required']
         ], [
             "title.required"  => 'Title tidak boleh kosong',
