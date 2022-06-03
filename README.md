@@ -12,7 +12,7 @@ Beberapa konfigurasi ENV yang diganti untuk bisa run project ini
 1. DB_CONNECTION = sqlite
 
 ## Preview Image
-![alt text](https://github.com/mkholidkamali/project-mini-blog/blob/main/public/source/1_index.png)
+1. Index ![alt text](https://github.com/mkholidkamali/project-mini-blog/blob/main/public/source/1_index.png)
 ![alt text](https://github.com/mkholidkamali/project-mini-blog/blob/main/public/source/2_show.png)
 ![alt text](https://github.com/mkholidkamali/project-mini-blog/blob/main/public/source/3_dashboard.png)
 ![alt text](https://github.com/mkholidkamali/project-mini-blog/blob/main/public/source/4_dashboard_create.png)
