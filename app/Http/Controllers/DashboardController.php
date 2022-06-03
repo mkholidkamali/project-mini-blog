@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Http\Request;
@@ -16,13 +17,14 @@ class DashboardController extends Controller
 
     public function index()
     {
-        // dd(session()->all());
-        return view('dashboard.index');
+        $posts = Post::where('user_id', Auth::id())->get();
+        return view('dashboard.index', compact('posts'));
     }
 
     public function create()
     {
-        return view('dashboard.create');
+        $categories = Category::all();
+        return view('dashboard.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -53,11 +55,14 @@ class DashboardController extends Controller
 
     public function edit(Post $post)
     {
-        return view('dashboard.edit');
+        $this->authorize('update', $post);
+        $categories = Category::all();
+        return view('dashboard.edit', compact('post', 'categories'));
     }
 
     public function update(Request $request, Post $post)
     {
+        $this->authorize('update', $post);
         // Validasi
         $data = $this->validate($request, [
             "title" => ['required', 'max:30', 'unique:posts'],
@@ -90,6 +95,7 @@ class DashboardController extends Controller
     
     public function destroy(Post $post)
     {
+        $this->authorize('delete', $post);
         $this->postService->destroyById($post->id);
 
         return response()
